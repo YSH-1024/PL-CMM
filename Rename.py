@@ -29,8 +29,8 @@ def CMM(A,B):
             AF.write(AB)
             AF.write(U)
         os.rename(AC,AB)
-        print("文件重命名完成")
-        input("输入Enter键关闭程序")
+    print("文件重命名完成")
+    input("输入Enter键关闭程序")
 
 def C(E):
     D = str("\\")
