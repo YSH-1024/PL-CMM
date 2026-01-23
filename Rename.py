@@ -7,7 +7,7 @@ import sv_ttk
 import os
 from datetime import datetime
 
-def CMM(A,B):
+def CMM(A,B,BW):
     AD = str("\\")
     AE = str(">>>")
     X = os.listdir(A)
@@ -21,19 +21,27 @@ def CMM(A,B):
     with open(S,"x",encoding = "UTF-8") as T:
         T.write(R)
         T.write(U)
-    V = 0
+    V = int(BW) - 1
     for Y in X:
-        V = V + 1
         Z = os.path.splitext(Y)[1]
-        AA = str("_")
-        AB = str(P) + str(B) + str(AA) + str(V) + str(Z)
-        AC = str(A) + str(AD) + str(Y)
-        with open(S,"a",encoding = "UTF-8") as AF:
-            AF.write(AC)
-            AF.write(AE)
-            AF.write(AB)
-            AF.write(U)
-        os.rename(AC,AB)
+        if Z == "":
+            continue
+        else:
+            V = V + 1
+            AA = str("_")
+            AB = str(P) + str(B) + str(AA) + str(V) + str(Z)
+            AC = str(A) + str(AD) + str(Y)
+            with open(S,"a",encoding = "UTF-8") as AF:
+                AF.write(AC)
+                AF.write(AE)
+                AF.write(AB)
+                AF.write(U)
+                CC = AZ()
+                CD = str("正在重命名")
+                AV.insert("end",CC + CD)
+                BF()
+                AV.see("end")
+            os.rename(AC,AB)
     BQ = str("文件重命名完成")
     BR = AZ()
     AV.insert("end",BR + BQ)
@@ -42,18 +50,29 @@ def CMM(A,B):
 
 def BE():
     AQ()
+    BY()
     BN = AZ()
     BO = str("前缀名称：")
+    CB = str("起始数：")
     BP = AP[0]
     BM = AS[0]
+    CA = BX[0]
     AV.insert("end",BN + BO + BM)
     BF()
     AV.see("end")
-    CMM(BP,BM)
+    AV.insert("end",BN + CB + CA)
+    BF()
+    AV.see("end")
+    CMM(BP,BM,CA)
 
 def BF():
     BG = "\n"
     AV.insert("end",BG)
+
+def BY():
+    BZ = BT.get()
+    BX.clear()
+    BX.append(BZ)
 
 def AQ():
     AR = AT.get()
@@ -104,12 +123,13 @@ def AL():
 
 AP = []
 AS = []
+BX = []
 
 AH = tkinter.Tk()
 
 AH.geometry("1200x700")
 AH.resizable(width = False, height = False)
-AH.title("PL-CMM_V-2.0.0")
+AH.title("PL-CMM_V-2.1.1")
 
 sv_ttk.set_theme("light")
 
@@ -120,11 +140,17 @@ BD.place(x = 500,y = 600)
 
 AT = ttk.Entry(AH,width = 20)
 AT.place(x = 125,y = 77)
+BT = ttk.Entry(AH,width = 20)
+BT.place(x = 125,y = 127)
 
 AU = ttk.Label(AH,text = "前缀名称：",font = ("",15))
 AU.place(x = 25,y = 80)
 AX = ttk.Label(AH,text = "文件路径：",font = ("",15))
 AX.place(x = 25,y = 30)
+BS = ttk.Label(AH,text = "B站搜索：YSH_Official 查看操作演示",font = ("",10))
+BS.place(x = 10,y = 685)
+BU = ttk.Label(AH,text = "起始数：",font = ("",15))
+BU.place(x = 25,y = 130)
 
 
 AV = tkinter.Text(AH,width = 55,height = 33,font = ("",15))
