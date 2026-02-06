@@ -149,9 +149,10 @@ AX = ttk.Label(AH,text = "文件路径：",font = ("",15))
 AX.place(x = 25,y = 30)
 BS = ttk.Label(AH,text = "B站搜索：YSH_Official 查看操作演示",font = ("",10))
 BS.place(x = 10,y = 685)
+CE = ttk.Label(AH,text = "使用 PL-CMM 项目，即表示您同意接受用户协议所有条款的约束。",font = ("",10))
+CE.place(x = 400,y = 685)
 BU = ttk.Label(AH,text = "起始数：",font = ("",15))
 BU.place(x = 25,y = 130)
-
 
 AV = tkinter.Text(AH,width = 55,height = 33,font = ("",15))
 AV.place(x = 600,y = 10)
